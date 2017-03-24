@@ -8,8 +8,6 @@ var para=document.createElement('p');
 var fontchanger=document.getElementById('fc');
 var oc=document.getElementById('options');
 
-
-
 submit.addEventListener('click',lol);
 
   function lol() {
@@ -55,6 +53,13 @@ function optionPlace() {
    select.appendChild(option);
 
     }
-      select.addEventListener('click',result);
+    // comments se nikal diye toh nai chalta
+    
+      //select.addEventListener('click',result);
+
+    }
+
+    function result() {
+    ///yaha code will come
 
     }
