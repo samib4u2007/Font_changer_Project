@@ -1,49 +1,36 @@
-
 var form=document.getElementById('form');
 var input=document.getElementById('name');
 var cont=document.getElementById('content');
-
 var submit=document.getElementById('submit');
 var para=document.createElement('p');
-var fontchanger=document.getElementById('fc');
-var oc=document.getElementById('options');
+var font_Changer=document.getElementById('font_Changer');
+var select=document.getElementById('select');
+var inside=document.getElementById('inside');
+var paragraph=document.createElement('p');
 
-submit.addEventListener('click',lol);
+submit.addEventListener('click',enter);
 
-  function lol() {
-  if (input.value==='') {
+  function enter() {
+    if (input.value==='') {
     para.setAttribute('class','alert alert-warning');
     para.textContent='Alert! Please Write Your Name';
     form.appendChild(para);
-      }
+    }
 
     else {
 
-      cont.textContent='Welcome ' +input.value+'  To The Font_Styler';
-   para.setAttribute('class','');
-   para.textContent='';
-   form.setAttribute('class','hidden');
-    font_changer();
-        }}
+    cont.textContent='Welcome ' +input.value+'  To The Font_Styler';
+    para.setAttribute('class','');
+    para.textContent='';
+    form.setAttribute('class','hidden');
+    font_Changer.setAttribute('class','');
+      }
+    }
 
-function font_changer() {
-  // INPUT lETA
-  var inside=document.createElement('input');
-  inside.setAttribute('type','text');
-  inside.setAttribute('placeholder','Please give the input for Font chhange')
-  inside.setAttribute('class','form-control');
-  inside.style.width='30%';
-  fontchanger.appendChild(inside);
-  optionPlace();
-}
+optionPlace();
 
 function optionPlace() {
-
-
-    var fonts=['sans-serif','Verdana'];
-
-    var select=document.createElement('select');
-    oc.appendChild(select);
+   var fonts=['sans-serif','Verdana',"serif","cursive", "fantasy", "monospace", "times", "courier", "arial"];
 
    for (var i = 0; i < fonts.length; i++) {
    var option=document.createElement('option');
@@ -53,13 +40,21 @@ function optionPlace() {
    select.appendChild(option);
 
     }
-    // comments se nikal diye toh nai chalta
-    
-      //select.addEventListener('click',result);
+
+
+    select.addEventListener('change',result);
+
 
     }
 
     function result() {
-    ///yaha code will come
+
+        var choice=select.value;
+        paragraph.setAttribute('align','center');
+        paragraph.textContent=inside.value;
+        paragraph.style.fontFamily=choice;
+        paragraph.style.fontSize='64px';
+        font_Changer.appendChild(paragraph);
+
 
     }

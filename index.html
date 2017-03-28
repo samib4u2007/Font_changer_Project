@@ -13,24 +13,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>
   <body>
 
-    <div class="container-fluid" id='hiv' >
-      <div class="jumbotron">
-        <h1 id='content'>Font_Styler</h1>
+    <div class="container-fluid">
+      <div class="jumbotron" style="background-color:black">
+        <h1 id='content' style="color:white">Font_Styler</h1>
 
       </div>
       <form id='form'>
     <div class="input-group">
-      <label for="name">Name :</label>
-    <input type="text" name="name" id="name" placeholder="Your Name">
-    <input type="button" id='submit' value="Submit" >
+      <label for="name">Name * :</label>
+    <input type="text" name="name" autocomplete='off' id="name" placeholder="Your Name">
+    <input type="button" class='btn btn-primary' id='submit' value="Submit" >
 
 
     </div>
   </form>
-  <div class="font_changer" id="fc">
+  <div id="font_Changer" class="hidden">
+    <input type="text" style='width:50%' autocomplete='off' id='inside'placeholder='Enter what you want to change'>
 
-  </div>
-  <div class="options" id='options'>
+    <select id='select'>
+      <option selected="selected">Choose</option>
+
+    </select>
+
 
   </div>
 
